@@ -26,6 +26,6 @@ USER devsu
 EXPOSE 8000
 
 HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
-    CMD wget --no-verbose --tries=1 http://localhost:8000/health || exit 1
+    CMD wget --no-verbose --tries=1 http://localhost:8000/_health || exit 1
 
 CMD ["node", "index.js"]
