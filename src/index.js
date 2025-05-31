@@ -6,10 +6,7 @@ const app = express();
 const PORT = 8000;
 
 if (process.env.NODE_ENV !== "test") {
-  sequelize.sync({ force: true }).then(() => {
-    console.log("db is ready");
-    app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
-  });
+  sequelize.sync({ force: true }).then(() => console.log('db is ready'))
 }
 
 app.use(express.json());
@@ -18,6 +15,7 @@ app.use("/api/users", usersRouter);
 app.get("/_health", (_, res) => {
   res.status(200).send("OK");
 });
+
 
 const server = app.listen(PORT, () => {
   console.log("Server running on port PORT", PORT);

@@ -12,14 +12,14 @@ FROM node:18.15.0-alpine AS production
 
 ENV NODE_ENV=production
 
-RUN addgroup -S devsuGroup && \
-    adduser -S devsu -G devsuGroup && \
-    mkdir -p /app/databases && \
-    chown -R devsu:devsuGroup /app/databases
-
 WORKDIR /app
 
 COPY --from=base /app .
+
+RUN addgroup -S devsuGroup && \
+    adduser -S devsu -G devsuGroup && \
+    mkdir -p ./database && \
+    chown -R devsu:devsuGroup ./database
 
 USER devsu
 
