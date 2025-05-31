@@ -29,6 +29,10 @@ jobs:
       run: npm ci
       working-directory: ./src
 
+    - name: Scan NPM dependencies with npm audit
+      run: npm audit --audit-level=moderate || true
+      working-directory: ./src
+
     - name: Set environment for tests
       run: cp .env.test .env
       working-directory: ./src
@@ -73,4 +77,11 @@ jobs:
         tags: ${{ secrets.DOCKER_USERNAME }}/devsu:latest
         cache-from: type=registry,ref=${{ secrets.DOCKER_USERNAME }}/devsu:cache
         cache-to: type=registry,ref=${{ secrets.DOCKER_USERNAME }}/devsu:cache,mode=max
-
+    
+    - name: Scan Docker image for vulnerabilities with Trivy
+      uses: aquasecurity/trivy-action@master
+      with:
+        image-ref: ${{ secrets.DOCKER_USERNAME }}/devsu:latest
+        format: table
+        exit-code: 0
+        ignore-unfixed: true
