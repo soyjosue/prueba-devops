@@ -1,0 +1,42 @@
+name: Devsu
+
+on:
+  push:
+    branches: [ "main", "soyjosue-patch-1" ]
+  pull_request:
+    branches: [ "main", "soyjosue-patch-1" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [18.15.0]
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+        cache-dependency-path: ./src/package-lock.json
+
+    - name: Install dependencies
+      run: npm ci
+      working-directory: ./src
+
+    - name: Set environment for tests
+      run: cp .env.test .env
+      working-directory: ./src
+
+    - name: Create DB folder
+      run: mkdir -p ./databases
+      working-directory: ./src
+
+    - name: Run tests
+      run: npm test
+      working-directory: ./src
