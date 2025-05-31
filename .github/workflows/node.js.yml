@@ -2,9 +2,9 @@ name: Devsu
 
 on:
   push:
-    branches: [ "main", "soyjosue-patch-1" ]
+    branches: [ "*" ]
   pull_request:
-    branches: [ "main", "soyjosue-patch-1" ]
+    branches: [ "*" ]
 
 jobs:
   build:
