@@ -1,0 +1,25 @@
+---
+- name: Get join command from master
+  hosts: Master
+  become: true
+  tasks:
+    - name: Get kubeadm join command
+      command: kubeadm token create --print-join-command
+      register: join_command
+
+- name: Join worker nodes to the cluster
+  hosts: Worker
+  become: true
+  tasks:
+    - name: Check if node is already joined
+      stat:
+        path: /etc/kubernetes/kubelet.conf
+      register: kubelet_config
+
+    - name: Execute join command
+      command: "{{ hostvars[groups['Master'][0]].join_command.stdout }} --cri-socket /var/run/cri-dockerd.sock  --ignore-preflight-errors=NumCPU,Mem"
+      when: not kubelet_config.stat.exists
+
+    - name: Label the node
+      shell: kubectl label node {{ hostvars[inventory_hostname]['ansible_hostname'] }} node-role.kubernetes.io/worker=worker --kubeconfig /etc/kubernetes/admin.conf
+      delegate_to: "{{ groups['Master'][0] }}"

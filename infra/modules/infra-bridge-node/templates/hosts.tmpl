@@ -1,0 +1,11 @@
+[Master]
+${control_plane_ip} ansible_ssh_common_args='-o StrictHostKeyChecking=no'
+
+[Worker]
+%{ for ip in worker_ips ~}
+${ip} ansible_ssh_common_args='-o StrictHostKeyChecking=no'
+%{ endfor ~}
+
+[all:vars]
+ansible_user=ubuntu
+ansible_ssh_private_key_file=~/.ssh/id_rsa

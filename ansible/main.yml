@@ -1,0 +1,9 @@
+---
+- name: Setup Docker and Kubernetes
+  import_playbook: playbooks/setup_k8s.yml
+
+- name: Initialize Kubernetes Cluster
+  import_playbook: playbooks/setup_k8s_cluster.yml
+
+- name: Add Worker Nodes to Kubernetes Cluster
+  import_playbook: playbooks/add_k8s_worker.yml

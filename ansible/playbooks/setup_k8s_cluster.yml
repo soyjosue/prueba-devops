@@ -1,0 +1,67 @@
+---
+- name: Initialize Kubernetes Cluster
+  hosts: Master
+  become: true
+  vars:
+    local_kubeadmin_config: "./kubeadm-conf.j2"
+    remote_kubeadmin_config: "/home/{{ ansible_user }}/kubeadm-conf.yaml"
+  tasks:
+    - name: Copy kubeadmin-config.yaml to remote machine
+      template:
+        src: "{{ local_kubeadmin_config }}"
+        dest: "{{ remote_kubeadmin_config }}"
+        owner: "{{ ansible_user }}"
+        mode: "0644"
+
+    - name: Ensure kubelet is enabled and started
+      systemd:
+        name: kubelet
+        enabled: yes
+        state: started
+
+    - name: Initialize Kubernetes cluster
+      command: kubeadm init --config {{ remote_kubeadmin_config }} --ignore-preflight-errors=NumCPU,Mem
+      args:
+        creates: /etc/kubernetes/admin.conf
+      register: kubeadm_init
+      changed_when: kubeadm_init.rc == 0
+
+    - name: Create .kube directory
+      file:
+        path: /home/{{ ansible_user }}/.kube
+        state: directory
+        mode: "0755"
+        owner: "{{ ansible_user }}"
+
+    - name: Copy Kubernetes admin.conf to user's home directory
+      copy:
+        src: /etc/kubernetes/admin.conf
+        dest: /home/{{ ansible_user }}/.kube/config
+        owner: "{{ ansible_user }}"
+        remote_src: true
+        mode: "0644"
+
+    - name: Change ownership of admin.conf
+      file:
+        path: /home/{{ ansible_user }}/.kube/config
+        owner: "{{ ansible_user }}"
+        group: "{{ ansible_user }}"
+        mode: "0644"
+
+    - name: Install Flannel CNI
+      command: kubectl apply --kubeconfig=/home/{{ ansible_user }}/.kube/config -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
+      changed_when: false
+
+    - name: Install Ingress Nginx
+      command: kubectl apply --kubeconfig=/home/{{ ansible_user }}/.kube/config -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.10.0/deploy/static/provider/cloud/deploy.yaml
+
+    - name: Patch ingress-nginx-controller to use NodePort and custom ports
+      command: >
+        kubectl patch svc ingress-nginx-controller --kubeconfig=/home/{{ ansible_user }}/.kube/config -n ingress-nginx
+        --type='json'
+        -p='[
+          {"op": "replace", "path": "/spec/type", "value": "NodePort"},
+          {"op": "replace", "path": "/spec/ports/0/nodePort", "value": 31567},
+          {"op": "replace", "path": "/spec/ports/1/nodePort", "value": 32567}
+        ]'
+

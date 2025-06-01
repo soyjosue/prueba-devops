@@ -1,0 +1,24 @@
+apiVersion: kubeadm.k8s.io/v1beta3
+kind: InitConfiguration
+localAPIEndpoint:
+  advertiseAddress: "{{ ansible_default_ipv4.address }}"  # IP privada del host
+  bindPort: 6443
+nodeRegistration:
+  criSocket: "unix:///var/run/cri-dockerd.sock"
+  kubeletExtraArgs:
+    node-ip: "{{ ansible_default_ipv4.address }}"
+    cgroup-driver: systemd
+
+---
+apiVersion: kubeadm.k8s.io/v1beta3
+kind: ClusterConfiguration
+kubernetesVersion: "v1.30.0"
+controlPlaneEndpoint: "{{ ansible_default_ipv4.address }}:6443"
+networking:
+  podSubnet: "10.244.0.0/16"  # para Flannel
+  serviceSubnet: "10.96.0.0/12"
+apiServer:
+  certSANs:
+    - "{{ ansible_default_ipv4.address }}"
+  extraArgs:
+    advertise-address: "{{ ansible_default_ipv4.address }}"

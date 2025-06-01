@@ -1,0 +1,38 @@
+# Archivos de estado de Terraform
+*.tfstate
+*.tfstate.backup
+*.tfstate.*
+
+# Archivos de planes
+*.tfplan
+
+# Carpetas ocultas de Terraform
+.terraform/
+.terraform.lock.hcl
+
+# Override files (útiles para variables locales que no quieras subir)
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Crash logs
+crash.log
+
+# Archivos de logs
+*.log
+
+# Archivos de variables sensibles
+terraform.tfvars
+terraform.tfvars.json
+*.auto.tfvars
+
+# Archivos generados por editores comunes
+*.swp
+*.swo
+*.DS_Store
+.idea/
+.vscode/
+
+infra/ssh-key
+ansible/hosts.ini
