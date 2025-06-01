@@ -85,3 +85,22 @@ jobs:
         format: table
         exit-code: 0
         ignore-unfixed: true
+    
+    - name: Deploy to K8S
+      uses: appleboy/ssh-action@v1.0.3
+      with:
+        host: ${{ secrets.INFRA_BRIDGE_HOST }}
+        username: ${{ secrets.INFRA_BRIDGE_USER }}
+        key: ${{ secrets.INFRA_BRIDGE_KEY }}
+        script: |
+          ssh -o StrictHostKeyChecking=no -i ~/.ssh/control_plane_key ${{ secrets.CONTROL_PLANE_USER }}@${{ secrets.CONTROL_PLANE_HOST }} << 'ENDSSH'
+            rm -rf devsu-app
+
+            git clone https://github.com/${{ github.repository }}.git
+
+            cd devsu-app
+
+            git checkout ${{ github.ref_name }}
+
+            kubectl apply -f ./k8s
+          ENDSSH
