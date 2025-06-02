@@ -5,7 +5,7 @@ output "vpc_id" {
 
 output "public_subnet_ids" {
   description = "The list of IDs for public subnets A and B"
-  value       = [
+  value = [
     aws_subnet.public_subnet_a.id,
     aws_subnet.public_subnet_b.id
   ]
@@ -18,7 +18,7 @@ output "private_subnet_id" {
 
 output "nat_gateway_ids" {
   description = "The list of NAT Gateway IDs for public subnet A and B"
-  value       = [
+  value = [
     aws_nat_gateway.devsu_nat_gateway_a.id,
     aws_nat_gateway.devsu_nat_gateway_b.id
   ]

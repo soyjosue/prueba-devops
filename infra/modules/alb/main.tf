@@ -6,7 +6,7 @@ resource "aws_lb" "alb" {
   security_groups    = [var.alb_security_group_id]
   subnets            = var.public_subnet_ids
 
-  idle_timeout       = 120
+  idle_timeout = 120
 
   tags = {
     Name = "devsu-alb"
