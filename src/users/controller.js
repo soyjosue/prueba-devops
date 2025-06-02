@@ -1,46 +1,64 @@
 import User from './model.js'
 
+// Helpers para respuestas
+const sendSuccess = (res, statusCode, data) => {
+    res.status(statusCode).json({ isSuccess: true, data });
+};
+
+const sendError = (res, statusCode, message) => {
+    res.status(statusCode).json({ isSuccess: false, error: message });
+};
+
 export const listUsers = async (req, res) => {
     try {
-        const users = await User.findAll()
-
-        res.status(200).json(users)
+        const users = await User.findAll();
+        return sendSuccess(res, 200, users);
     } catch (error) {
-        console.error('listUsers() -> unknown', { error })
-        res.status(500).json({ error: 'Internal Server Error' })
+        console.error('listUsers() -> Internal Error:', error);
+        return sendError(res, 500, 'Error listing users');
     }
-}
+};
 
 export const getUser = async (req, res) => {
     try {
-        const { id } = req.params
-        const user = await User.findByPk(id)
-  
-        if (user == null) {
-            return res.status(404).json({ error: 'User not found: ' + id })
+        const { id } = req.params;
+
+        if (!id) {
+            return sendError(res, 400, 'User ID is required');
         }
 
-        return res.status(200).json(user)
+        const user = await User.findByPk(id);
+
+        if (!user) {
+            return sendError(res, 404, `User not found with ID: ${id}`);
+        }
+
+        return sendSuccess(res, 200, user);
     } catch (error) {
-        console.error('listUsers() -> unknown', { error })
-        res.status(500).json({ error: 'Internal Server Error' })
+        console.error('getUser() -> Internal Error:', error);
+        return sendError(res, 500, 'Error retrieving user');
     }
-}
+};
 
 export const createUser = async (req, res) => {
     try {
-        const userRequest = req.body
-        const userExist = await User.findOne({ where: { dni: userRequest.dni } })
+        const { dni, ...userData } = req.body;
 
-        if (userExist != null) {
-            return res.status(400).json({ error: 'User already exists: ' + userRequest.dni })
+        if (!dni) {
+            return sendError(res, 400, 'DNI is required');
         }
 
-        const user = await User.create(userRequest)
+        const userExist = await User.findOne({ where: { dni } });
 
-        return res.status(201).json(user)
+        if (userExist) {
+            return sendError(res, 409, `User already exists with DNI: ${dni}`);
+        }
+
+        const user = await User.create({ dni, ...userData });
+
+        return sendSuccess(res, 201, user);
     } catch (error) {
-        console.error('listUsers() -> unknown', { error })
-        res.status(500).json({ error: 'Internal Server Error' })
+        console.error('createUser() -> Internal Error:', error);
+        return sendError(res, 500, 'Error creating user');
     }
-}
+};
