@@ -106,3 +106,22 @@ El workflow de **GitHub Actions** se comunica con el nodo `infra_bridge_node` pa
 #### 🌐 Acceso al Backend
 
 La comunicación externa con el backend desplegado en Kubernetes se realiza mediante un **Elastic Load Balancer (ELB)** de **AWS**, que expone los servicios de backend de forma controlada y segura.
+
+# Ejecución de Pipelines
+
+En este repositorio se ejecutaron dos pipelines principales durante la prueba técnica:
+
+### 🔴 [Pipeline con fallo en los tests](https://github.com/soyjosue/prueba-devops/actions/runs/15383843401)
+Este pipeline presenta fallos en la ejecución de los tests, lo cual fue intencional para demostrar el control de errores en el flujo CI/CD.
+
+### ✅ [Pipeline exitoso](https://github.com/soyjosue/prueba-devops/actions/runs/15383904035)
+Este pipeline completó satisfactoriamente todas las etapas: instalación de dependencias, ejecución de tests y despliegue.
+
+---
+
+## Ambiente AWS de Pruebas
+
+Como se explicó previamente, el entorno utilizado corresponde a un **ambiente de pruebas en AWS**.  
+En caso de que aún esté activo al momento de la verificación, puedes consultar el API desplegado accediendo a la siguiente URL:
+
+🔗 [http://devsu-alb-1585038574.us-east-1.elb.amazonaws.com/api/users](http://devsu-alb-1585038574.us-east-1.elb.amazonaws.com/api/users)
