@@ -23,3 +23,7 @@
     - name: Label the node
       shell: kubectl label node {{ hostvars[inventory_hostname]['ansible_hostname'] }} node-role.kubernetes.io/worker=worker --kubeconfig /etc/kubernetes/admin.conf
       delegate_to: "{{ groups['Master'][0] }}"
+
+    - name: Scale ingress-nginx-controller
+      shell: "kubectl scale deployment ingress-nginx-controller -n ingress-nginx --replicas=2 --kubeconfig /etc/kubernetes/admin.conf"
+      delegate_to: "{{ groups['Master'][0] }}"

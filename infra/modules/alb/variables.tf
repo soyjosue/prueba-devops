@@ -17,3 +17,8 @@ variable "private_sg_id" {
   type        = string
   description = "The ID of the security group to associate with the private instances behind the ALB."
 }
+
+variable "alb_security_group_id" {
+  type        = string
+  description = "The ID of the alb security group"
+}

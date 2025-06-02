@@ -94,11 +94,13 @@ jobs:
         key: ${{ secrets.INFRA_BRIDGE_KEY }}
         script: |
           ssh -o StrictHostKeyChecking=no -i ~/.ssh/control_plane_key ${{ secrets.CONTROL_PLANE_USER }}@${{ secrets.CONTROL_PLANE_HOST }} << 'ENDSSH'
-            rm -rf devsu-app
+            REPO_NAME=$(basename "${{ github.repository }}")
+
+            rm -rf "$REPO_NAME"
 
             git clone https://github.com/${{ github.repository }}.git
 
-            cd devsu-app
+            cd "$REPO_NAME"
 
             git checkout ${{ github.ref_name }}
 

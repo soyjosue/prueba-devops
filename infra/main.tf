@@ -52,18 +52,19 @@ module "infra_bridge_node" {
   subnet_id               = module.vpc.public_subnet_ids[0]
   key_pair_name           = aws_key_pair.ec2_key.key_name
   ssh_private_key_content = local_file.pem_private_key.content
-  worker_ips               = module.k8s_worker_server.k8s_worker_private_ip
+  worker_ips              = module.k8s_worker_server.k8s_worker_private_ip
   control_plane_ip        = module.k8s_control_plane_server.k8s_control_plane_private_ip
 }
 
 module "alb" {
   source = "./modules/alb"
-  
+
   private_instance_ids = {
     for idx, id in module.k8s_worker_server.k8s_worker_instance_id :
     "worker${idx + 1}" => id
   }
-  vpc_id           = module.vpc.vpc_id
-  public_subnet_ids = module.vpc.public_subnet_ids
-  private_sg_id = module.vpc.private_security_group_id
+  vpc_id                = module.vpc.vpc_id
+  public_subnet_ids     = module.vpc.public_subnet_ids
+  private_sg_id         = module.vpc.private_security_group_id
+  alb_security_group_id = module.vpc.alb_security_group_id
 }

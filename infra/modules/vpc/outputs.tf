@@ -33,3 +33,9 @@ output "private_security_group_id" {
   description = "The ID of the security group used for private instances"
   value       = aws_security_group.private_sg.id
 }
+
+
+output "alb_security_group_id" {
+  description = "The ID of the security group used for alb"
+  value       = aws_security_group.alb_sg.id
+}

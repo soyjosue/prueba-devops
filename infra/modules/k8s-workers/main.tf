@@ -4,14 +4,13 @@ resource "aws_instance" "k8s_worker_server" {
   subnet_id              = var.subnet_id
   vpc_security_group_ids = [var.security_group_id]
   key_name               = var.key_pair_name
+  count                  = 1
 
-  count = 2
-
-    user_data = <<-EOF
+  user_data = <<-EOF
               #!/bin/bash
-              sudo mkdir -p /mnt/data
-              sudo chown -R 1000:1000 /mnt/data
-              sudo chmod -R 755 /mnt/data
+              mkdir -p /mnt/data
+              chown -R 1000:1000 /mnt/data
+              chmod -R 755 /mnt/data
               EOF
 
   tags = {

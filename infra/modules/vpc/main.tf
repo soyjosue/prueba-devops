@@ -139,6 +139,7 @@ resource "aws_security_group" "private_sg" {
     to_port         = 0
     protocol        = "-1"
     security_groups = [aws_security_group.public_sg.id]
+    self            = false
   }
 
   ingress {
@@ -148,6 +149,12 @@ resource "aws_security_group" "private_sg" {
     self      = true
   }
 
+  ingress {
+    from_port       = 31567
+    to_port         = 31567
+    protocol        = "tcp"
+    security_groups = [aws_security_group.alb_sg.id]
+  }
 }
 
 resource "aws_security_group" "public_sg" {
@@ -168,4 +175,31 @@ resource "aws_security_group" "public_sg" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 }
+
+# ---- Load Balancer Security Group ----
+resource "aws_security_group" "alb_sg" {
+  name        = "alb_sg"
+  description = "Allow HTTP traffic for the Load Balancer"
+  vpc_id      = aws_vpc.devsu_vpc.id
+
+  ingress {
+    description = "Allow HTTP from the internet"
+    from_port   = 80
+    to_port     = 80
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  egress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  tags = {
+    Name = "alb_sg"
+  }
+}
+
 # ---- Security Group ----
