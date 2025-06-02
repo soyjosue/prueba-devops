@@ -1,0 +1,364 @@
+tls_private_key.ssh_key: Creating...
+module.vpc.aws_eip.nat_eip_b: Creating...
+module.vpc.aws_eip.nat_eip_a: Creating...
+module.vpc.aws_vpc.devsu_vpc: Creating...
+module.vpc.aws_eip.nat_eip_b: Creation complete after 1s [id=eipalloc-075dccb2b1828b174]
+module.vpc.aws_eip.nat_eip_a: Creation complete after 1s [id=eipalloc-0a812f472ad78886a]
+module.vpc.aws_vpc.devsu_vpc: Creation complete after 4s [id=vpc-0664d66aa66bb11c7]
+module.vpc.aws_subnet.public_subnet_b: Creating...
+module.vpc.aws_route_table.private_route_table: Creating...
+module.vpc.aws_subnet.private_subnet: Creating...
+module.vpc.aws_subnet.public_subnet_a: Creating...
+module.vpc.aws_internet_gateway.devsu_igw: Creating...
+module.alb.aws_lb_target_group.tg: Creating...
+module.vpc.aws_security_group.public_sg: Creating...
+module.vpc.aws_security_group.alb_sg: Creating...
+module.vpc.aws_route_table.private_route_table: Creation complete after 1s [id=rtb-0c8c658e42fae50e3]
+module.vpc.aws_subnet.private_subnet: Creation complete after 2s [id=subnet-0dfd1beaafd17b54f]
+module.vpc.aws_route_table_association.private_subnet_association: Creating...
+module.vpc.aws_internet_gateway.devsu_igw: Creation complete after 2s [id=igw-092f318f90b180705]
+module.vpc.aws_route_table.public_route_table: Creating...
+module.vpc.aws_subnet.public_subnet_a: Creation complete after 2s [id=subnet-052cda6c21b38c2d0]
+module.vpc.aws_nat_gateway.devsu_nat_gateway_a: Creating...
+module.vpc.aws_subnet.public_subnet_b: Creation complete after 2s [id=subnet-0f77c7e997014382a]
+module.vpc.aws_nat_gateway.devsu_nat_gateway_b: Creating...
+module.vpc.aws_route_table_association.private_subnet_association: Creation complete after 0s [id=rtbassoc-05b4454de49ca6368]
+tls_private_key.ssh_key: Creation complete after 9s [id=e7d10230d657419e13cab68b327bc1b0e0a3b606]
+aws_key_pair.ec2_key: Creating...
+local_file.pem_private_key: Creating...
+local_file.pem_private_key: Creation complete after 0s [id=bc8bfb2b48cdb360d0b93f388ca71e3996054330]
+module.alb.aws_lb_target_group.tg: Creation complete after 3s [id=arn:aws:elasticloadbalancing:us-east-1:663463646048:targetgroup/devsu-tg/603d4ea1584559f8]
+aws_key_pair.ec2_key: Creation complete after 0s [id=ec2_ssh_key]
+module.vpc.aws_route_table.public_route_table: Creation complete after 2s [id=rtb-05a4a906a2ee0d319]
+module.vpc.aws_route_table_association.public_subnet_association_b: Creating...
+module.vpc.aws_route_table_association.public_subnet_association_a: Creating...
+module.vpc.aws_route_table_association.public_subnet_association_a: Creation complete after 0s [id=rtbassoc-02250a9b51f253aa8]
+module.vpc.aws_route_table_association.public_subnet_association_b: Creation complete after 0s [id=rtbassoc-062cbb62d18aec0a1]
+module.vpc.aws_security_group.alb_sg: Creation complete after 4s [id=sg-0732fdeb0c2b5ed61]
+module.vpc.aws_security_group.public_sg: Creation complete after 4s [id=sg-0be2c0468a8236a97]
+module.alb.aws_lb.alb: Creating...
+module.infra_bridge_node.aws_instance.infra_bridge_node: Creating...
+module.vpc.aws_security_group.private_sg: Creating...
+module.vpc.aws_security_group.private_sg: Creation complete after 5s [id=sg-0208f5faff70c6c9d]
+module.k8s_worker_server.aws_instance.k8s_worker_server[0]: Creating...
+module.k8s_control_plane_server.aws_instance.k8s_control_plane_server: Creating...
+module.vpc.aws_nat_gateway.devsu_nat_gateway_a: Still creating... [00m10s elapsed]
+module.vpc.aws_nat_gateway.devsu_nat_gateway_b: Still creating... [00m10s elapsed]
+module.alb.aws_lb.alb: Still creating... [00m10s elapsed]
+module.infra_bridge_node.aws_instance.infra_bridge_node: Still creating... [00m10s elapsed]
+module.k8s_worker_server.aws_instance.k8s_worker_server[0]: Still creating... [00m10s elapsed]
+module.k8s_control_plane_server.aws_instance.k8s_control_plane_server: Still creating... [00m10s elapsed]
+module.infra_bridge_node.aws_instance.infra_bridge_node: Creation complete after 16s [id=i-067e8e91c93363578]
+module.vpc.aws_nat_gateway.devsu_nat_gateway_a: Still creating... [00m20s elapsed]
+module.vpc.aws_nat_gateway.devsu_nat_gateway_b: Still creating... [00m20s elapsed]
+module.k8s_worker_server.aws_instance.k8s_worker_server[0]: Creation complete after 14s [id=i-0024ec47ecd809fca]
+module.alb.aws_lb_target_group_attachment.tg_attachments["worker1"]: Creating...
+module.k8s_control_plane_server.aws_instance.k8s_control_plane_server: Creation complete after 15s [id=i-0cfae681fca12666d]
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder: Creating...
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder: Provisioning with 'remote-exec'...
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): Connecting to remote host via SSH...
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec):   Host: 3.88.13.250
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec):   User: ubuntu
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec):   Password: false
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec):   Private key: true
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec):   Certificate: false
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec):   SSH Agent: false
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec):   Checking Host Key: false
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec):   Target Platform: unix
+module.alb.aws_lb_target_group_attachment.tg_attachments["worker1"]: Creation complete after 1s [id=arn:aws:elasticloadbalancing:us-east-1:663463646048:targetgroup/devsu-tg/603d4ea1584559f8-20250602035621774700000003]
+module.alb.aws_lb.alb: Still creating... [00m20s elapsed]
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): Connected!
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): Waiting for ansible-playbook to be available...
+module.vpc.aws_nat_gateway.devsu_nat_gateway_a: Still creating... [00m30s elapsed]
+module.vpc.aws_nat_gateway.devsu_nat_gateway_b: Still creating... [00m30s elapsed]
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder: Still creating... [00m10s elapsed]
+module.alb.aws_lb.alb: Still creating... [00m30s elapsed]
+module.vpc.aws_nat_gateway.devsu_nat_gateway_a: Still creating... [00m40s elapsed]
+module.vpc.aws_nat_gateway.devsu_nat_gateway_b: Still creating... [00m40s elapsed]
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder: Still creating... [00m20s elapsed]
+module.alb.aws_lb.alb: Still creating... [00m40s elapsed]
+module.vpc.aws_nat_gateway.devsu_nat_gateway_a: Still creating... [00m50s elapsed]
+module.vpc.aws_nat_gateway.devsu_nat_gateway_b: Still creating... [00m50s elapsed]
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder: Still creating... [00m30s elapsed]
+module.alb.aws_lb.alb: Still creating... [00m50s elapsed]
+module.vpc.aws_nat_gateway.devsu_nat_gateway_a: Still creating... [01m00s elapsed]
+module.vpc.aws_nat_gateway.devsu_nat_gateway_b: Still creating... [01m00s elapsed]
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder: Still creating... [00m40s elapsed]
+module.alb.aws_lb.alb: Still creating... [01m00s elapsed]
+module.vpc.aws_nat_gateway.devsu_nat_gateway_a: Still creating... [01m10s elapsed]
+module.vpc.aws_nat_gateway.devsu_nat_gateway_b: Still creating... [01m10s elapsed]
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder: Still creating... [00m50s elapsed]
+module.alb.aws_lb.alb: Still creating... [01m10s elapsed]
+module.vpc.aws_nat_gateway.devsu_nat_gateway_a: Still creating... [01m20s elapsed]
+module.vpc.aws_nat_gateway.devsu_nat_gateway_b: Still creating... [01m20s elapsed]
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder: Still creating... [01m00s elapsed]
+module.alb.aws_lb.alb: Still creating... [01m20s elapsed]
+module.vpc.aws_nat_gateway.devsu_nat_gateway_a: Still creating... [01m30s elapsed]
+module.vpc.aws_nat_gateway.devsu_nat_gateway_b: Still creating... [01m30s elapsed]
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder: Still creating... [01m10s elapsed]
+module.alb.aws_lb.alb: Still creating... [01m30s elapsed]
+module.vpc.aws_nat_gateway.devsu_nat_gateway_a: Creation complete after 1m39s [id=nat-02fdd9bc8cd8e1660]
+module.vpc.aws_route.private_route: Creating...
+module.vpc.aws_route.private_route: Creation complete after 1s [id=r-rtb-0c8c658e42fae50e31080289494]
+module.vpc.aws_nat_gateway.devsu_nat_gateway_b: Still creating... [01m40s elapsed]
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder: Still creating... [01m20s elapsed]
+module.alb.aws_lb.alb: Still creating... [01m40s elapsed]
+module.vpc.aws_nat_gateway.devsu_nat_gateway_b: Creation complete after 1m49s [id=nat-034b6538fb7b39577]
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): ansible-playbook is now installed.
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder: Still creating... [01m30s elapsed]
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder: Provisioning with 'file'...
+module.alb.aws_lb.alb: Still creating... [01m50s elapsed]
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder: Provisioning with 'remote-exec'...
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): Connecting to remote host via SSH...
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec):   Host: 3.88.13.250
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec):   User: ubuntu
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec):   Password: false
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec):   Private key: true
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec):   Certificate: false
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec):   SSH Agent: false
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec):   Checking Host Key: false
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec):   Target Platform: unix
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): Connected!
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder: Provisioning with 'file'...
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder: Provisioning with 'remote-exec'...
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): Connecting to remote host via SSH...
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec):   Host: 3.88.13.250
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec):   User: ubuntu
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec):   Password: false
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec):   Private key: true
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec):   Certificate: false
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec):   SSH Agent: false
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec):   Checking Host Key: false
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec):   Target Platform: unix
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): Connected!
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder: Provisioning with 'remote-exec'...
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): Connecting to remote host via SSH...
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec):   Host: 3.88.13.250
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec):   User: ubuntu
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec):   Password: false
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec):   Private key: true
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec):   Certificate: false
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec):   SSH Agent: false
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec):   Checking Host Key: false
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec):   Target Platform: unix
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): Connected!
+
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): PLAY [Install Docker, CRI-Dockerd, and Kubernetes packages] ********************
+
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): TASK [Gathering Facts] *********************************************************
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder: Still creating... [01m40s elapsed]
+module.alb.aws_lb.alb: Still creating... [02m00s elapsed]
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): [WARNING]: Platform linux on host 10.0.2.20 is using the discovered Python
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): interpreter at /usr/bin/python3.12, but future installation of another Python
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): interpreter could change the meaning of that path. See
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): https://docs.ansible.com/ansible-
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): core/2.18/reference_appendices/interpreter_discovery.html for more information.
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): ok: [10.0.2.20]
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): [WARNING]: Platform linux on host 10.0.2.50 is using the discovered Python
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): interpreter at /usr/bin/python3.12, but future installation of another Python
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): interpreter could change the meaning of that path. See
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): https://docs.ansible.com/ansible-
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): core/2.18/reference_appendices/interpreter_discovery.html for more information.
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): ok: [10.0.2.50]
+
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): TASK [Update APT package index] ************************************************
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder: Still creating... [01m50s elapsed]
+module.alb.aws_lb.alb: Still creating... [02m10s elapsed]
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): changed: [10.0.2.20]
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): changed: [10.0.2.50]
+
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): TASK [Install required packages] ***********************************************
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder: Still creating... [02m00s elapsed]
+module.alb.aws_lb.alb: Still creating... [02m20s elapsed]
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): changed: [10.0.2.20]
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): changed: [10.0.2.50]
+
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): TASK [Create directory for APT keyrings] ***************************************
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder: Still creating... [02m10s elapsed]
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): ok: [10.0.2.50]
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): ok: [10.0.2.20]
+
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): TASK [Download Docker's official GPG key] **************************************
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): ok: [10.0.2.50]
+module.alb.aws_lb.alb: Still creating... [02m30s elapsed]
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): ok: [10.0.2.20]
+
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): TASK [Add Docker repository to APT sources] ************************************
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): ok: [10.0.2.50]
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): ok: [10.0.2.20]
+
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): TASK [Update APT package index again] ******************************************
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): changed: [10.0.2.50]
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): changed: [10.0.2.20]
+
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): TASK [Install Docker packages] *************************************************
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder: Still creating... [02m20s elapsed]
+module.alb.aws_lb.alb: Still creating... [02m40s elapsed]
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): changed: [10.0.2.50]
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): changed: [10.0.2.20]
+
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): TASK [Download CRI-Dockerd package] ********************************************
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder: Still creating... [02m30s elapsed]
+module.alb.aws_lb.alb: Still creating... [02m50s elapsed]
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): changed: [10.0.2.50]
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): changed: [10.0.2.20]
+
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): TASK [Install CRI-Dockerd package] *********************************************
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): ok: [10.0.2.20]
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): ok: [10.0.2.50]
+
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): TASK [Download Kubernetes GPG key] *********************************************
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): changed: [10.0.2.20]
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): changed: [10.0.2.50]
+
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): TASK [Save Kubernetes GPG key] *************************************************
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): changed: [10.0.2.50]
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): changed: [10.0.2.20]
+
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): TASK [Add Kubernetes repository to APT sources] ********************************
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): changed: [10.0.2.50]
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): changed: [10.0.2.20]
+
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): TASK [Update APT package index for Kubernetes] *********************************
+module.alb.aws_lb.alb: Creation complete after 2m58s [id=arn:aws:elasticloadbalancing:us-east-1:663463646048:loadbalancer/app/devsu-alb/3bfea08dff73cdb4]
+module.alb.aws_lb_listener.listener: Creating...
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): changed: [10.0.2.50]
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): changed: [10.0.2.20]
+
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): TASK [Install Kubernetes packages] *********************************************
+module.alb.aws_lb_listener.listener: Creation complete after 1s [id=arn:aws:elasticloadbalancing:us-east-1:663463646048:listener/app/devsu-alb/3bfea08dff73cdb4/1fc1afaccbb6a72f]
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder: Still creating... [02m40s elapsed]
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): changed: [10.0.2.20]
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): changed: [10.0.2.50]
+
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): TASK [Hold Kubernetes packages] ************************************************
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): ok: [10.0.2.20]
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder: Still creating... [02m50s elapsed]
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): ok: [10.0.2.50]
+
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): TASK [Disable swap] ************************************************************
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): ok: [10.0.2.20]
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): ok: [10.0.2.50]
+
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): TASK [Comment out swap in /etc/fstab] ******************************************
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): ok: [10.0.2.50]
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): ok: [10.0.2.20]
+
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): TASK [Load overlay kernel module] **********************************************
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): ok: [10.0.2.50]
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): ok: [10.0.2.20]
+
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): TASK [Load br_netfilter kernel module] *****************************************
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): ok: [10.0.2.50]
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): ok: [10.0.2.20]
+
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): TASK [Configure sysctl for Kubernetes] *****************************************
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): changed: [10.0.2.50]
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): changed: [10.0.2.20]
+
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): TASK [Apply sysctl settings] ***************************************************
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): ok: [10.0.2.50]
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): ok: [10.0.2.20]
+
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): PLAY [Initialize Kubernetes Cluster] *******************************************
+
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): TASK [Gathering Facts] *********************************************************
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): ok: [10.0.2.50]
+
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): TASK [Copy kubeadmin-config.yaml to remote machine] ****************************
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): changed: [10.0.2.50]
+
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): TASK [Ensure kubelet is enabled and started] ***********************************
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): changed: [10.0.2.50]
+
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): TASK [Initialize Kubernetes cluster] *******************************************
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder: Still creating... [03m00s elapsed]
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder: Still creating... [03m10s elapsed]
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): changed: [10.0.2.50]
+
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): TASK [Create .kube directory] **************************************************
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): changed: [10.0.2.50]
+
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): TASK [Copy Kubernetes admin.conf to user's home directory] *********************
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): changed: [10.0.2.50]
+
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): TASK [Change ownership of admin.conf] ******************************************
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder: Still creating... [03m20s elapsed]
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): changed: [10.0.2.50]
+
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): TASK [Install Flannel CNI] *****************************************************
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): ok: [10.0.2.50]
+
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): TASK [Install Ingress Nginx] ***************************************************
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): changed: [10.0.2.50]
+
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): TASK [Patch ingress-nginx-controller to use NodePort and custom ports] *********
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): changed: [10.0.2.50]
+
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): PLAY [Get join command from master] ********************************************
+
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): TASK [Gathering Facts] *********************************************************
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): ok: [10.0.2.50]
+
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): TASK [Get kubeadm join command] ************************************************
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): changed: [10.0.2.50]
+
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): PLAY [Join worker nodes to the cluster] ****************************************
+
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): TASK [Gathering Facts] *********************************************************
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): ok: [10.0.2.20]
+
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): TASK [Check if node is already joined] *****************************************
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): ok: [10.0.2.20]
+
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): TASK [Execute join command] ****************************************************
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder: Still creating... [03m30s elapsed]
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): changed: [10.0.2.20]
+
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): TASK [Label the node] **********************************************************
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): changed: [10.0.2.20 -> 10.0.2.50]
+
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): TASK [Scale ingress-nginx-controller] ******************************************
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): changed: [10.0.2.20 -> 10.0.2.50]
+
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): PLAY RECAP *********************************************************************
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): 10.0.2.20                  : ok=27   changed=14   unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder (remote-exec): 10.0.2.50                  : ok=34   changed=20   unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+
+module.infra_bridge_node.null_resource.upload_and_apply_ansible_folder: Creation complete after 3m38s [id=957516768]
+
+Apply complete! Resources: 29 added, 0 changed, 0 destroyed.
+
+Outputs:
+
+alb = {
+  "dns_name" = "devsu-alb-1585038574.us-east-1.elb.amazonaws.com"
+  "listener_arn" = "arn:aws:elasticloadbalancing:us-east-1:663463646048:listener/app/devsu-alb/3bfea08dff73cdb4/1fc1afaccbb6a72f"
+  "target_group_arn" = "arn:aws:elasticloadbalancing:us-east-1:663463646048:targetgroup/devsu-tg/603d4ea1584559f8"
+}
+infra_bridge_node = {
+  "dns_name" = "ec2-3-88-13-250.compute-1.amazonaws.com"
+  "public_ip" = "3.88.13.250"
+}
+k8s_control_plane = {
+  "private_ip" = "10.0.2.50"
+}
+k8s_worker_node = {
+  "private_ips" = [
+    "10.0.2.20",
+  ]
+}
+network = {
+  "nat_gateway_ids" = [
+    "nat-02fdd9bc8cd8e1660",
+    "nat-034b6538fb7b39577",
+  ]
+  "private_security_group_id" = "sg-0208f5faff70c6c9d"
+  "private_subnet_id" = "subnet-0dfd1beaafd17b54f"
+  "public_security_group_id" = "sg-0be2c0468a8236a97"
+  "public_subnet_ids" = [
+    "subnet-052cda6c21b38c2d0",
+    "subnet-0f77c7e997014382a",
+  ]
+  "vpc_id" = "vpc-0664d66aa66bb11c7"
+}

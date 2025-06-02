@@ -1,0 +1,31 @@
+alb = {
+  "dns_name" = "devsu-alb-1585038574.us-east-1.elb.amazonaws.com"
+  "listener_arn" = "arn:aws:elasticloadbalancing:us-east-1:663463646048:listener/app/devsu-alb/3bfea08dff73cdb4/1fc1afaccbb6a72f"
+  "target_group_arn" = "arn:aws:elasticloadbalancing:us-east-1:663463646048:targetgroup/devsu-tg/603d4ea1584559f8"
+}
+infra_bridge_node = {
+  "dns_name" = "ec2-3-88-13-250.compute-1.amazonaws.com"
+  "public_ip" = "3.88.13.250"
+}
+k8s_control_plane = {
+  "private_ip" = "10.0.2.50"
+}
+k8s_worker_node = {
+  "private_ips" = [
+    "10.0.2.20",
+  ]
+}
+network = {
+  "nat_gateway_ids" = [
+    "nat-02fdd9bc8cd8e1660",
+    "nat-034b6538fb7b39577",
+  ]
+  "private_security_group_id" = "sg-0208f5faff70c6c9d"
+  "private_subnet_id" = "subnet-0dfd1beaafd17b54f"
+  "public_security_group_id" = "sg-0be2c0468a8236a97"
+  "public_subnet_ids" = [
+    "subnet-052cda6c21b38c2d0",
+    "subnet-0f77c7e997014382a",
+  ]
+  "vpc_id" = "vpc-0664d66aa66bb11c7"
+}
